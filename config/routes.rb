@@ -1,6 +1,21 @@
 Rails.application.routes.draw do  
+    
+  get 'events/upcoming' => 'events#upcoming', as: :upcoming
+
+  get 'public/about' => 'public#about', as: :about
 
   root 'public#index'
+
+  resources :user_sessions
+
+  resources :users
+
+  resources :members
+
+  resources :events
+
+  match '/login', :to => 'user_sessions#new', via: [:get, :post]
+  match '/logout', :to => 'user_sessions#destroy', via: [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

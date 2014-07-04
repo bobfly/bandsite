@@ -24,23 +24,19 @@
           <div class="row">
              
             <div class="large-4 small-6 columns">
- 
+ 		
               <h4 class="myTitle">Javni nastupi</h4><hr>
- 
+ 			<% @events.each do |event| %>
               <div class="row">
                 <!--div class="large-1 column">
                   <img src="http://placehold.it/50x50&text=[img]">
-                </div-->                
- 
+                </div-->                 			
                 <div class="large-12 columns" style="color:white">
-                  1.12.2014 - Caffe bar "kod Pere"                  
+                  <%= "#{event.event_date } - #{ event.name }" %>                  
                 </div>
               </div><hr>
-              <div class="row">
-              	<div class="large-12 columns" style="color:white">
-                  3.12.2014 - Caffe bar "kod Đure"                  
-                </div>
-              </div><hr>
+              <% end %>     
+              <%= will_paginate @events %>         
  
               <div class="hide-for-small">                                            
               </div>

@@ -1,1 +1,16 @@
 <%# add navigation links to this file %>
+<ul class="left">
+<li><%= link_to "O nama", about_path %></li>
+<li><%= link_to "Kontaktirajte nas", "#" %></li>
+</ul>
+<ul class="right">
+	<% if current_user %>	
+	<li><%= link_to 'Nadolazeće svirke', upcoming_path %></li>
+	<li><%= link_to 'Sve svirke', events_path %></li>
+	<% end %>
+	<% if current_user %>
+	<li><%= link_to 'Odjava', logout_path %></li>
+	<% else %>
+	<li><%= link_to 'Prijava', login_path %></li>
+	<% end %>
+</ul>
