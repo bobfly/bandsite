@@ -3,13 +3,10 @@
     <div class="large-15 columns"> 
       <div class="row">
         <div class="large-10 hide-for-small"> 
-          <div id="featured" data-orbit>
-              <!--img src="http://placehold.it/1200x500&text=Slide Image 1" alt="slide image">
-              <img src="http://placehold.it/1200x500&text=Slide Image 2" alt="slide image">
-              <img src="http://placehold.it/1200x500&text=Slide Image 3" alt="slide image"-->
-              <%= image_tag("zdenac1.jpg", alt:"slide image") %>
-              <%= image_tag("zdenac2.jpg", alt:"slide image") %>
-              <%= image_tag("zdenac3.jpg", alt:"slide image") %>
+          <div id="featured" data-orbit>              
+              <% @images.each do |image| %>
+                <%= image_tag "slide/#{image.split('/').last}" %>
+              <% end %>             
             </div> 
       </div>
     </div>      

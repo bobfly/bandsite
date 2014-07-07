@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   match '/login', :to => 'user_sessions#new', via: [:get, :post]
   match '/logout', :to => 'user_sessions#destroy', via: [:get, :post]
 
+  match '/contacts',     to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
